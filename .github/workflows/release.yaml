@@ -29,4 +29,4 @@ jobs:
           helm repo index . --url https://airplanedev.github.io/charts/ --merge index.yaml
           git add .
           git commit -m "Update charts"
-          git push
+          git push origin gh-pages

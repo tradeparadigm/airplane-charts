@@ -1,10 +1,12 @@
 replicaCount: 3
 
 airplane:
-  apiHost: https://api.airplane.dev
   apiToken: ""
   teamID: ""
+
+  apiHost: https://api.airplane.dev
   agentLabels: {}
+  runNamespace: default
 
 image:
   repository: airplanedev/agent
