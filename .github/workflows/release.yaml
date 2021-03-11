@@ -22,7 +22,11 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.2.0
-        env:
-          CR_TOKEN: "${{ secrets.CR_TOKEN }}"
+      - name: Push new release
+        run: |
+          helm package airplane-agent
+          git checkout gh-pages
+          helm repo index . --url https://airplanedev.github.io/charts/ --merge index.yaml
+          git add .
+          git commit -m "Update charts"
+          git push
