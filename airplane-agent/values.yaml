@@ -2,8 +2,8 @@ replicaCount: 3
 
 airplane:
   apiHost: https://api.airplane.dev
-  apiToken: TODO
-  teamID: TODO
+  apiToken: ""
+  teamID: ""
   agentLabels: {}
 
 image:
