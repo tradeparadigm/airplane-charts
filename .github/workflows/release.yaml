@@ -25,6 +25,7 @@ jobs:
       - name: Push new release
         run: |
           helm package airplane-agent
+          git fetch
           git checkout gh-pages
           helm repo index . --url https://airplanedev.github.io/charts/ --merge index.yaml
           git add .
