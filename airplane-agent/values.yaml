@@ -1,0 +1,32 @@
+replicaCount: 3
+
+airplane:
+  apiHost: https://api.airplane.dev
+  apiToken: TODO
+  teamID: TODO
+  agentLabels: {}
+
+image:
+  repository: airplanedev/agent
+  pullPolicy: Always
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+rbac:
+  create: true
+
+serviceAccount:
+  create: true
+  annotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
