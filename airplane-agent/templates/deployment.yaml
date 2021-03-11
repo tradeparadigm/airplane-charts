@@ -38,7 +38,7 @@ spec:
             - name: AP_DRIVER
               value: "kubernetes"
             - name: AP_K8S_NAMESPACE
-              vaule: "{{ .Values.airplane.runNamespace }}"
+              value: "{{ .Values.airplane.runNamespace }}"
             - name: AP_LABELS
               value: "installer:helm
                 {{- range $key, $val := .Values.airplane.agentLabels }} {{ $key }}:{{ $val }}
