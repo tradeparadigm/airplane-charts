@@ -31,10 +31,12 @@ spec:
             - name: AP_API_TOKEN
               {{- if .Values.airplane.apiToken }}
               value: "{{ .Values.airplane.apiToken }}"
-              {{- else }}
+              {{- else if .Values.airplane.apiTokenSecret.name }}
               valueFrom:
                 secretKeyRef:
                   {{- toYaml .Values.airplane.apiTokenSecret | nindent 18 }}
+              {{- else }}
+              value: ""
               {{- end }}
               value: "{{ .Values.airplane.apiToken }}"
             - name: AP_TEAM_ID
