@@ -45,8 +45,10 @@ spec:
               value: "installer:helm
                 {{- range $key, $val := .Values.airplane.agentLabels }} {{ $key }}:{{ $val }}
                 {{- end }}"
+            - name: AP_MTA_AGENT
+              value: "{{ .Values.airplane.mtaAgent | toString }}"
             - name: AP_PARALLELISM
-              value: "{{ .Values.airplane.parallelism }}"
+              value: "{{ .Values.airplane.parallelism | toString }}"
             - name: AP_PORT
               value: "8080"
             - name: SENTRY_DSN

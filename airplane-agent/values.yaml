@@ -6,6 +6,7 @@ airplane:
 
   apiHost: https://api.airplane.dev
   agentLabels: {}
+  mtaAgent: false
   parallelism: 10
   runNamespace: default
   runtimeClass: ""
