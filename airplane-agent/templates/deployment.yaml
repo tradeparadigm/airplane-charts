@@ -38,7 +38,6 @@ spec:
               {{- else }}
               value: ""
               {{- end }}
-              value: "{{ .Values.airplane.apiToken }}"
             - name: AP_TEAM_ID
               value: "{{ .Values.airplane.teamID }}"
             
