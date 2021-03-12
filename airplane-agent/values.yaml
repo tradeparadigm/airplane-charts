@@ -8,6 +8,7 @@ airplane:
   agentLabels: {}
   parallelism: 10
   runNamespace: default
+  runtimeClass: ""
 
 image:
   repository: airplanedev/agent
