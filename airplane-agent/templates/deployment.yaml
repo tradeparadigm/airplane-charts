@@ -39,7 +39,7 @@ spec:
               value: "kubernetes"
             - name: AP_K8S_NAMESPACE
               value: "{{ .Values.airplane.runNamespace }}"
-            - name: AP_RUNTIME_CLASS
+            - name: AP_K8S_RUNTIME_CLASS
               value: "{{ .Values.airplane.runtimeClass }}"
             - name: AP_LABELS
               value: "installer:helm
