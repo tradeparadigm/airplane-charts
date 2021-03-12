@@ -29,6 +29,13 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: AP_API_TOKEN
+              {{- if .Values.airplane.apiToken }}
+              value: "{{ .Values.airplane.apiToken }}"
+              {{- else }}
+              valueFrom:
+                secretKeyRef:
+                  {{- toYaml .Values.airplane.apiTokenSecret | nindent 18 }}
+              {{- end }}
               value: "{{ .Values.airplane.apiToken }}"
             - name: AP_TEAM_ID
               value: "{{ .Values.airplane.teamID }}"
@@ -52,6 +59,13 @@ spec:
             - name: AP_PORT
               value: "8080"
             - name: AP_SERVICE_JWT_SECRET
+              {{- if .Values.airplane.serviceJWTSecret.name }}
+              valueFrom:
+                secretKeyRef:
+                  {{- toYaml .Values.airplane.serviceJWTSecret | nindent 18 }}
+              {{- else }}
+              value: ""
+              {{- end }}
               value: "{{ .Values.airplane.serviceJWTSecret }}"
             - name: SENTRY_DSN
               value: "{{ .Values.sentry.dsn }}"

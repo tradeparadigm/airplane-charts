@@ -1,7 +1,11 @@
 replicaCount: 3
 
 airplane:
+  # Specify either apiToken or apiTokenSecret, not both
   apiToken: ""
+  apiTokenSecret:
+    name: ""
+    key: ""
   teamID: ""
 
   agentLabels: {}
@@ -11,7 +15,9 @@ airplane:
   apiHost: https://api.airplane.dev
   mtaAgent: false
   runtimeClass: ""
-  serviceJWTSecret: ""
+  serviceJWTSecret:
+    name: ""
+    key: ""
 
 image:
   repository: airplanedev/agent
