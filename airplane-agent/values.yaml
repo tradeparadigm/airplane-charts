@@ -6,6 +6,7 @@ airplane:
 
   apiHost: https://api.airplane.dev
   agentLabels: {}
+  parallelism: 10
   runNamespace: default
 
 image:
