@@ -67,7 +67,6 @@ spec:
               {{- else }}
               value: ""
               {{- end }}
-              value: "{{ .Values.airplane.serviceJWTSecret }}"
             - name: SENTRY_DSN
               value: "{{ .Values.sentry.dsn }}"
             - name: SENTRY_ENVIRONMENT
