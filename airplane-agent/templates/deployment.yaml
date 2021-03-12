@@ -51,6 +51,8 @@ spec:
               value: "{{ .Values.airplane.parallelism | toString }}"
             - name: AP_PORT
               value: "8080"
+            - name: AP_SERVICE_JWT_SECRET
+              value: "{{ .Values.airplane.serviceJWTSecret }}"
             - name: SENTRY_DSN
               value: "{{ .Values.sentry.dsn }}"
             - name: SENTRY_ENVIRONMENT

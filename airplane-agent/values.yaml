@@ -4,12 +4,14 @@ airplane:
   apiToken: ""
   teamID: ""
 
-  apiHost: https://api.airplane.dev
   agentLabels: {}
-  mtaAgent: false
   parallelism: 10
   runNamespace: default
+
+  apiHost: https://api.airplane.dev
+  mtaAgent: false
   runtimeClass: ""
+  serviceJWTSecret: ""
 
 image:
   repository: airplanedev/agent
