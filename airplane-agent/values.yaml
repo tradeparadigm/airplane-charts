@@ -18,6 +18,7 @@ airplane:
   serviceJWTSecret:
     name: ""
     key: ""
+  autoUpgrade: true
 
 image:
   repository: airplanedev/agent

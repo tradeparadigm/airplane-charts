@@ -69,6 +69,8 @@ spec:
               {{- else }}
               value: ""
               {{- end }}
+            - name: AP_AUTO_UPGRADE
+              value: "{{ .Values.airplane.autoUpgrade }}"
             - name: SENTRY_DSN
               value: "{{ .Values.sentry.dsn }}"
             - name: SENTRY_ENVIRONMENT
