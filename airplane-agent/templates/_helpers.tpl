@@ -49,6 +49,9 @@ Selector labels
 {{- define "kubernetes_agent.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "kubernetes_agent.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Values.extraLabels }}
+{{ toYaml .Values.extraLabels }}
+{{- end }}
 {{- end -}}
 
 {{/*

@@ -75,6 +75,8 @@ spec:
               value: "{{ .Values.sentry.dsn }}"
             - name: SENTRY_ENVIRONMENT
               value: "{{ .Values.sentry.environment }}"
+            - name: AP_ENVIRONMENT
+              value: "{{ .Values.sentry.environment }}"
           ports:
             - name: http
               containerPort: 8080
