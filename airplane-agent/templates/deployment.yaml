@@ -27,7 +27,8 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          {{- $image := printf "%s:%s" .Values.image.repository .Chart.AppVersion -}}
+          image: "{{ $image }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: AP_API_TOKEN
@@ -71,6 +72,8 @@ spec:
               {{- end }}
             - name: AP_AUTO_UPGRADE
               value: "{{ .Values.airplane.autoUpgrade }}"
+            - name: AP_AGENT_IMAGE
+              value: "{{ $image }}"
             - name: SENTRY_DSN
               value: "{{ .Values.sentry.dsn }}"
             - name: SENTRY_ENVIRONMENT

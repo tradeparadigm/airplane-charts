@@ -21,7 +21,7 @@ airplane:
   autoUpgrade: true
 
 image:
-  repository: airplanedev/agent
+  repository: us-docker.pkg.dev/airplane-prod/public/agent
   pullPolicy: Always
 
 imagePullSecrets: []
