@@ -27,7 +27,7 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          {{- $image := printf "%s:%s" .Values.image.repository .Chart.AppVersion -}}
+          {{ $image := printf "%s:%s" .Values.image.repository .Chart.AppVersion -}}
           image: "{{ $image }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
@@ -43,7 +43,6 @@ spec:
               {{- end }}
             - name: AP_TEAM_ID
               value: "{{ .Values.airplane.teamID }}"
-            
             - name: AP_API_HOST
               value: "{{ .Values.airplane.apiHost }}"
             - name: AP_DRIVER
