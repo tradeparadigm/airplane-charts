@@ -15,6 +15,7 @@ airplane:
   apiHost: https://api.airplane.dev
   mtaAgent: false
   runtimeClass: ""
+  clusterFirstDNS: false
   serviceJWTSecret:
     name: ""
     key: ""
