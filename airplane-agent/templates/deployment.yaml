@@ -55,8 +55,6 @@ spec:
                 {{- end }}"
             - name: AP_MTA_AGENT
               value: "{{ .Values.airplane.mtaAgent | toString }}"
-            - name: AP_PARALLELISM
-              value: "{{ .Values.airplane.parallelism | toString }}"
             - name: AP_PORT
               value: "8080"
             - name: AP_SERVICE_JWT_SECRET
@@ -77,6 +75,10 @@ spec:
               value: "{{ .Values.sentry.environment }}"
             - name: AP_ENVIRONMENT
               value: "{{ .Values.sentry.environment }}"
+            - name: AP_LOCK_KEY
+              value: "{{ .Values.airplane.teamID }}"
+            - name: AP_ENV_SLUG
+              value: "{{ .Values.airplane.envSlug }}"
             - name: AP_K8S_CLUSTER_FIRST_DNS
               value: "{{ .Values.airplane.clusterFirstDNS | toString }}"
           ports:

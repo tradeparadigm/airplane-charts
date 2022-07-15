@@ -9,8 +9,8 @@ airplane:
   teamID: ""
 
   agentLabels: {}
-  parallelism: 10
   runNamespace: default
+  envSlug: ""
 
   apiHost: https://api.airplane.dev
   mtaAgent: false
@@ -22,7 +22,7 @@ airplane:
   autoUpgrade: true
 
 image:
-  repository: us-docker.pkg.dev/airplane-prod/public/agent
+  repository: us-docker.pkg.dev/airplane-prod/public/agentv2
   pullPolicy: Always
 
 imagePullSecrets: []
