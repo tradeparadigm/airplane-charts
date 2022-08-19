@@ -76,7 +76,7 @@ spec:
             - name: AP_ENVIRONMENT
               value: "{{ .Values.sentry.environment }}"
             - name: AP_LOCK_KEY
-              value: "{{ .Values.airplane.teamID }}"
+              value: "helm-{{ uuidv4 }}-{{ .Values.airplane.teamID }}"
             - name: AP_ENV_SLUG
               value: "{{ .Values.airplane.envSlug }}"
             - name: AP_K8S_CLUSTER_FIRST_DNS
