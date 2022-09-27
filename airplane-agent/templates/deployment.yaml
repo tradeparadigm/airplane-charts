@@ -81,7 +81,7 @@ spec:
               value: "{{ .Values.airplane.envSlug }}"
             - name: AP_K8S_CLUSTER_FIRST_DNS
               value: "{{ .Values.airplane.clusterFirstDNS | toString }}"
-            - name: AP_TEMPORAL_HOST
+            - name: AP_RUNNER_TEMPORAL_HOST
               value: "{{ .Values.airplane.temporalHost }}"
           ports:
             - name: http
