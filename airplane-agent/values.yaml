@@ -13,6 +13,7 @@ airplane:
   envSlug: ""
 
   apiHost: https://api.airplane.dev
+  temporalHost: temporal-api.airplane.dev:443
   mtaAgent: false
   runtimeClass: ""
   clusterFirstDNS: false
