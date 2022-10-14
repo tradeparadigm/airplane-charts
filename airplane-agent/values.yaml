@@ -16,6 +16,16 @@ airplane:
   temporalHost: temporal-api.airplane.dev:443
   mtaAgent: false
   runtimeClass: ""
+  # Node selectors to use when scheduling runs.
+  # Accepts a map of key-value pairs where keys are node labels and values
+  # are the expected value for that label. For example:
+  # - my_node_label: my_expected_label_value
+  nodeSelector: {}
+  # Tolerations to use when scheduling runs. Each toleration will have an operator
+  # of "Equal" and an effect of "NoSchedule".
+  # Accepts a map of key-value pairs. For example:
+  # - my_toleration_key: my_toleration_value
+  tolerations: {}
   clusterFirstDNS: false
   serviceJWTSecret:
     name: ""
@@ -41,8 +51,18 @@ podSecurityContext: {}
 
 securityContext: {}
 
+# Node selectors to use when scheduling agents.
+# Accepts a map of key-value pairs where keys are node labels and values
+# are the expected value for that label. For example:
+# - my_node_label: my_expected_label_value
 nodeSelector: {}
 
+# Tolerations to use when scheduling agents.
+# Accepts a list of tolerations. For example:
+# - key: "my_toleration_key"
+#   operator: "Equal"
+#   value: "my_toleration_value"
+#   effect: "NoSchedule"
 tolerations: []
 
 affinity: {}

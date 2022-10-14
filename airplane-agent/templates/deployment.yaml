@@ -49,6 +49,10 @@ spec:
               value: "{{ .Values.airplane.runNamespace }}"
             - name: AP_K8S_RUNTIME_CLASS
               value: "{{ .Values.airplane.runtimeClass }}"
+            - name: AP_K8S_TOLERATIONS
+              value: "{{- range $key, $val := .Values.airplane.tolerations }}{{ $key }}={{ $val }};{{- end }}"
+            - name: AP_K8S_NODE_SELECTOR
+              value: "{{- range $key, $val := .Values.airplane.nodeSelector }}{{ $key }}={{ $val }};{{- end }}"
             - name: AP_LABELS
               value: "airplane_installer:helm
                 {{- range $key, $val := .Values.airplane.agentLabels }} {{ $key }}:{{ $val }}
