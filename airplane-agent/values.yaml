@@ -26,7 +26,12 @@ airplane:
   # Accepts a map of key-value pairs. For example:
   # - my_toleration_key: my_toleration_value
   tolerations: {}
+  # Deprecated. Use "dnsPolicy: ClusterFirst" instead.
   clusterFirstDNS: false
+  # The DNS policy to apply to runs.
+  # Accepts any of "Default", "ClusterFirst", "ClusterFirstWithHostNet", and "None".
+  # See: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
+  dnsPolicy: Default
   serviceJWTSecret:
     name: ""
     key: ""
