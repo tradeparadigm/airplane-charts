@@ -36,6 +36,9 @@ airplane:
     name: ""
     key: ""
   autoUpgrade: true
+  # A random identifier, such as a UUIDv4, that uniquely identifies this agent within your team.
+  # By default, this is regenerated every time the chart runs but can be overridden to keep it consistent.
+  randomLockID: ""
 
 image:
   repository: us-docker.pkg.dev/airplane-prod/public/agentv2

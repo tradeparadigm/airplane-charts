@@ -80,7 +80,11 @@ spec:
             - name: AP_ENVIRONMENT
               value: "{{ .Values.sentry.environment }}"
             - name: AP_LOCK_KEY
+              {{- if .Values.airplane.randomLockID }}
+              value: "helm-{{ .Values.airplane.randomLockID }}-{{ .Values.airplane.teamID }}"
+              {{- else }}
               value: "helm-{{ uuidv4 }}-{{ .Values.airplane.teamID }}"
+              {{- end }}
             - name: AP_ENV_SLUG
               value: "{{ .Values.airplane.envSlug }}"
             - name: AP_K8S_DNS_POLICY
