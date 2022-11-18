@@ -40,6 +40,10 @@ airplane:
   # By default, this is regenerated every time the chart runs but can be overridden to keep it consistent.
   randomLockID: ""
 
+  # The name of the service account to run task pods under. If unset, they'll use the
+  # default service account in the runNamespace.
+  taskServiceAccountName: ""
+
 image:
   repository: us-docker.pkg.dev/airplane-prod/public/agentv2
   pullPolicy: Always
