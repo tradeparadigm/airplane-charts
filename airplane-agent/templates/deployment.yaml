@@ -95,6 +95,10 @@ spec:
               value: "{{ .Values.airplane.temporalHost }}"
             - name: AP_K8S_SERVICE_ACCOUNT_NAME
               value:  "{{ .Values.airplane.taskServiceAccountName }}"
+            - name: AP_LOCALDEV
+              value:  "{{ .Values.airplane.debugMode }}"
+            - name: AP_DEBUG_LOGGING
+              value:  "{{ .Values.airplane.debugMode }}"
           ports:
             - name: http
               containerPort: 8080

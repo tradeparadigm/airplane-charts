@@ -44,6 +44,9 @@ airplane:
   # default service account in the runNamespace.
   taskServiceAccountName: ""
 
+  # For development purposes only.
+  debugMode: false
+
 image:
   repository: us-docker.pkg.dev/airplane-prod/public/agentv2
   pullPolicy: Always
