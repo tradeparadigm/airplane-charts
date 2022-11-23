@@ -12,7 +12,8 @@ airplane:
   # Change this to run pods in a different namespace
   runNamespace: default
   # Optional: attach labels to agents for constraints
-  agentLabels: "orchestration:kubernetes"
+  agentLabels: 
+    orchestration: kubernetes
   # Optional: if set, only allows agents to execute runs from environment
   # with the provided slug
   envSlug: ""
