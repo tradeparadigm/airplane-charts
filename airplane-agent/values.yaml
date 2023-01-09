@@ -44,6 +44,10 @@ airplane:
   # default service account in the runNamespace.
   taskServiceAccountName: ""
 
+  # Set to true if you're running inside AWS and want to use ECR-sourced public
+  # images. This can improve performance and may reduce networking costs.
+  useECRPublicImages: false
+
   # For development purposes only.
   debugMode: false
 
