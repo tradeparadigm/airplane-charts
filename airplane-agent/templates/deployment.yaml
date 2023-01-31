@@ -40,7 +40,15 @@ spec:
               value: ""
               {{- end }}
             - name: AP_TEAM_ID
+              {{- if .Values.airplane.teamID }}
               value: "{{ .Values.airplane.teamID }}"
+              {{- else if .Values.airplane.teamIDSecret.name }}
+              valueFrom:
+                secretKeyRef:
+                  {{- toYaml .Values.airplane.teamIDSecret | nindent 18 }}
+              {{- else }}
+              value: ""
+              {{- end }}
             - name: AP_API_HOST
               value: "{{ .Values.airplane.apiHost }}"
             - name: AP_DRIVER
@@ -81,9 +89,9 @@ spec:
               value: "{{ .Values.sentry.environment }}"
             - name: AP_LOCK_KEY
               {{- if .Values.airplane.randomLockID }}
-              value: "helm-{{ .Values.airplane.randomLockID }}-{{ .Values.airplane.teamID }}"
+              value: "helm-{{ .Values.airplane.randomLockID }}"
               {{- else }}
-              value: "helm-{{ uuidv4 }}-{{ .Values.airplane.teamID }}"
+              value: "helm-{{ uuidv4 }}"
               {{- end }}
             - name: AP_ENV_SLUG
               value: "{{ .Values.airplane.envSlug }}"

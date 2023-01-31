@@ -6,7 +6,11 @@ airplane:
   apiTokenSecret:
     name: ""
     key: ""
+  # Specify either teamID or teamIDSecret, not both
   teamID: ""
+  teamIDSecret:
+    name: ""
+    key: ""
 
   agentLabels: {}
   runNamespace: default
