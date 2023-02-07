@@ -6,6 +6,7 @@ airplane:
   apiTokenSecret:
     name: ""
     key: ""
+
   # Specify either teamID or teamIDSecret, not both
   teamID: ""
   teamIDSecret:
@@ -20,26 +21,37 @@ airplane:
   temporalHost: temporal-api.airplane.dev:443
   mtaAgent: false
   runtimeClass: ""
+
   # Node selectors to use when scheduling runs.
   # Accepts a map of key-value pairs where keys are node labels and values
   # are the expected value for that label. For example:
   # - my_node_label: my_expected_label_value
   nodeSelector: {}
+
   # Tolerations to use when scheduling runs. Each toleration will have an operator
   # of "Equal" and an effect of "NoSchedule".
   # Accepts a map of key-value pairs. For example:
   # - my_toleration_key: my_toleration_value
   tolerations: {}
+
   # Deprecated. Use "dnsPolicy: ClusterFirst" instead.
   clusterFirstDNS: false
+
   # The DNS policy to apply to runs.
+  #
   # Accepts any of "Default", "ClusterFirst", "ClusterFirstWithHostNet", and "None".
-  # See: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
+  # See: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy.
+  #
+  # NOTE: If your tasks need to communicate with other services in your cluster, then you probably
+  # want "ClusterFirst" here. We're setting "Default" for backwards compatibility reasons, but this
+  # will be changed in the next major version of this chart.
   dnsPolicy: Default
+
   serviceJWTSecret:
     name: ""
     key: ""
   autoUpgrade: true
+
   # A random identifier, such as a UUIDv4, that uniquely identifies this agent within your team.
   # By default, this is regenerated every time the chart runs but can be overridden to keep it consistent.
   randomLockID: ""
